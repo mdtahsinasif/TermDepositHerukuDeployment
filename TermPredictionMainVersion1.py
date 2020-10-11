@@ -21,7 +21,8 @@ import json
 
 
 app = Flask(__name__,template_folder='template')
-MODEL_FILE = 'C:/Users/TahsinAsif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/Heroku_Yogen_API/grid_classifier_modelVersion1.pkl'
+#MODEL_FILE = 'C:/Users/TahsinAsif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/Heroku_Yogen_API/grid_classifier_modelVersion1.pkl'
+MODEL_FILE = 'grid_classifier_modelVersion1.pkl'
 log_estimator = joblib.load(MODEL_FILE)
 
 @app.route('/')
