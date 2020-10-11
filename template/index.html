@@ -9,8 +9,29 @@
     <link href ='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel = 'stylesheet' type ='text/css'>
 	<style>
 	.login {
+	  text-align: justify;
 	  text-align: center;
-	  <!--border: 3px solid green;-->
+	  border: 30px solid purple;
+	}
+	label{
+	  width:240px;
+	  display:inline-block;
+	  text-align:right;
+	}
+	input{
+	  padding: 6px;
+	  font-size:14px;
+	  border-radius:4px;
+	}
+	select{
+	  padding: 6px;
+	  font-size:14px;
+	  border-radius:4px;
+	}
+	.btn{
+		border-radius: 50px;
+		padding: 14px 40px;
+		background-color: #f44336;
 	}
 
 
@@ -19,12 +40,12 @@
 <body style="background-color:powderblue;">
 
     <div class = "login">
-        <h1>Term Deposist Prediction </h1>
+        <h1><u>Term Deposist Prediction</u> </h1>
 <!--        Main input for receiving query to our ML-->
         <form action = "{{url_for('termDepositPrediction')}}" mothod = "post">
 
 			<label for="default">Do you have any credit ?</label>
-			<select name="default" id="default">
+			<select name="default" id="default" >
 				<option value="0">No</option>
 				<option value="1">Yes</option>
 			</select>
@@ -85,7 +106,7 @@
 			<label for="balance">Average yearly balance, in euros (numeric):</label>
 			<input type="number" id="balance" name="balance">	
 			<br><br>
-			<label for="campaign">Number of contacts performed during this campaign and for this client :</label>
+			<label for="campaign">Number of contacts performed during this campaign:</label>
 			<input type="number" id="campaign" name="campaign">	
 			<br><br>
 			<label for="duration">Last contact duration, in seconds (numeric):</label>
@@ -108,7 +129,7 @@
 				<option value="poutcome_unknown">Unknown</option>
 			</select>
 			<br><br>
-            <button type="submit" class ="btn btn-primary btn-block btn-large">Predict</button>
+            <button type="submit" class ="btn btn-primary btn-block btn-large"><b>Predict</b></button>
         </form>
 
      <br>
