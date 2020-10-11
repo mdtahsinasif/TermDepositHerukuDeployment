@@ -22,7 +22,7 @@ import json
 
 app = Flask(__name__,template_folder='template')
 #MODEL_FILE = 'C:/Users/TahsinAsif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/Heroku_Yogen_API/grid_classifier_modelVersion1.pkl'
-MODEL_FILE = 'grid_classifier_modelVersion1.pkl'
+MODEL_FILE = 'C:/Users/TahsinAsif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/Heroku_Yogen_API/knn_estimator_model.pkl'
 log_estimator = joblib.load(MODEL_FILE)
 
 @app.route('/')
@@ -33,6 +33,7 @@ def home():
 
 @app.route('/termDepositPrediction', methods=['POST','GET'])
 def termDepositPrediction():
+    output = ''
     json_= request.json
     url_test = pd.DataFrame([json_])
     default_json = request.args.get('default') 
@@ -260,8 +261,12 @@ def termDepositPrediction():
     print('query_df_array::----->',url_test)
     prediction = log_estimator.predict(x)
     print('Predicted Value;--->',prediction)
+    if(prediction == 1):
+        output = "Yes"
+    else:
+        output = "No"
    # return jsonify (pd.Series(prediction).to_json(orient='values'))
-    return render_template('index.html', prediction_text='Predicted Term  Probablity is {}'.format(prediction))
+    return render_template('index.html', prediction_text='Predicted Term  Probablity is :---> {}'.format(output))
     
 if __name__ == '__main__':
     app.run(debug=True)
