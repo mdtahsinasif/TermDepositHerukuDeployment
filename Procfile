@@ -1,0 +1,1 @@
+web: gunicorn TermPredictionMainVersion1:app
