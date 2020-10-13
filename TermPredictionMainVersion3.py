@@ -24,8 +24,10 @@ import numpy
 app = Flask(__name__,template_folder='template')
 #MODEL_FILE = 'C:/Users/TahsinAsif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/Heroku_Yogen_API/grid_classifier_modelVersion1.pkl'
 #MODEL_FILE = 'C:/Users/TahsinAsif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/Heroku_Yogen_API/knn_estimator_model.pkl'
-MODEL_FILE = 'C:/Users/TahsinAsif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/Heroku_Yogen_API/xgb_classifier_model.pkl'
-SCALAR_MODEL = 'C:/Users/TahsinAsif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/Heroku_Yogen_API/scalerModel_model.pkl'
+#MODEL_FILE = 'C:/Users/TahsinAsif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/Heroku_Yogen_API/xgb_classifier_model.pkl'
+#SCALAR_MODEL = 'C:/Users/TahsinAsif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/tahsin.asif/OneDrive - CYFIRMA INDIA PRIVATE LIMITED/AI/Heroku_Yogen_API/scalerModel_model.pkl'
+MODEL_FILE = 'xgb_classifier_model.pkl'
+SCALAR_MODEL = 'scalerModel_model.pkl'
 log_estimator = joblib.load(MODEL_FILE)
 scaler_model = joblib.load(SCALAR_MODEL)
 
