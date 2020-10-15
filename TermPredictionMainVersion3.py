@@ -282,7 +282,7 @@ def termDepositPrediction():
     print('query_df_array::----->',url_test)
     prediction = log_estimator.predict_proba(x)
     print('Predicted Value;--->',(prediction[:,1]))
-    if(prediction[:,1] > .37):
+    if(prediction[:,1] > .39):
         output = "Yes"
     else:
         output = "No"
